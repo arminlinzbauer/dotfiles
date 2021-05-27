@@ -1,0 +1,35 @@
+#!/bin/sh
+
+# enable color support of ls and other commands
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# ls aliases
+alias ls='ls --group-directories-first --color=auto'
+alias ll='ls -hlF'
+alias lla='ls -hlF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# convenience aliases
+alias dsh='docker-compose exec app_server /bin/bash'
+alias dup='docker-compose up --remove-orphans'
+alias sw-user='echo "./elio.sh console user:create -a --firstName Armin --lastName Linzbauer --email al@elio-systems.com -p al@elio-systems.com al@elio-systems.com"'
+alias psh="./psh.phar"
+alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias df="dotfiles"
+alias dotfiles-config="dotfiles config --local status.showUntrackedFiles no"
+alias df-config="dotfiles-config"
+
+# config aliases
+alias noti='noti -l'
+alias tmux="tmux -2"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
