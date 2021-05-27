@@ -1,0 +1,10 @@
+[core]
+	autocrlf = input
+[merge]
+	rebase = false
+[commit]
+	gpgsign = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
