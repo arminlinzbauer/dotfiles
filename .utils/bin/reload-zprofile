@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+configFile="$HOME/.zprofile"
+if [ -f "$configFile" ]; then
+    source "$configFile"
+fi
+unset configFile

@@ -31,6 +31,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set PATH so it includes utility scripts if it exists
+if [ -d "$HOME/.utils/bin" ] ; then
+    PATH="$HOME/.utils/bin:$PATH"
+fi
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 

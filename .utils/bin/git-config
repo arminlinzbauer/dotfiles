@@ -1,0 +1,10 @@
+#!/bin/bash
+
+configFile="$HOME/.examples/.gitconfig"
+if [ -f "$configFile" ]; then
+    /usr/bin/cat $configFile
+    echo ""
+else
+    echo "Example config file not found."
+fi
+unset configFile

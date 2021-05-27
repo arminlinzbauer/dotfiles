@@ -1,0 +1,7 @@
+#!/bin/bash
+
+configFile="$HOME/.bashrc"
+if [ -f "$configFile" ]; then
+    source "$configFile"
+fi
+unset configFile
